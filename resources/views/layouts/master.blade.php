@@ -94,6 +94,23 @@
             border-color: var(--tam-primary) !important;
         }
 
+        .navbar .nav-link {
+            white-space: nowrap !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            font-size: 0.92rem;
+            transition: color 0.15s ease;
+        }
+        .navbar .nav-link:hover {
+            color: var(--tam-primary) !important;
+        }
+        .navbar-brand {
+            white-space: nowrap !important;
+        }
+        .navbar-nav {
+            flex-wrap: nowrap;
+        }
+
         @media print {
             .no-print, nav, footer, .topbar-medical {
                 display: none !important;
@@ -110,9 +127,10 @@
 
     @include('layouts.partials.header')
 
+    <x-alert />
+
     <main class="flex-grow-1 py-4">
         <div class="container">
-            <x-alert />
             @yield('content')
         </div>
     </main>
