@@ -76,6 +76,8 @@ class UserController extends Controller
             'is_active' => $request->has('is_active') ? $request->boolean('is_active') : true,
         ]);
 
+        $this->ensureRoleProfileExists($newUser);
+
         \App\Services\SecurityAuditService::log(
             'user_created',
             "Quản trị viên đã tạo mới tài khoản {$newUser->email} (Vai trò: {$newUser->role}).",
@@ -154,6 +156,7 @@ class UserController extends Controller
         }
 
         $user->update($updateData);
+        $this->ensureRoleProfileExists($user);
 
         $eventType = !$isActive && $wasActive ? 'user_locked' : 'user_updated';
         $severity = !$isActive && $wasActive ? 'warning' : 'info';
@@ -200,5 +203,45 @@ class UserController extends Controller
         );
 
         return redirect()->route('admin.users.index')->with('success', "Đã xóa tài khoản {$userName} thành công.");
+    }
+
+    /**
+     * Automatically provision a linked Doctor or PatientProfile record if missing.
+     */
+    protected function ensureRoleProfileExists(User $user): void
+    {
+        if ($user->role === User::ROLE_DOCTOR && !$user->doctor()->exists()) {
+            $specialty = \App\Models\Specialty::first();
+            if ($specialty) {
+                $doctor = \App\Models\Doctor::create([
+                    'user_id' => $user->id,
+                    'specialty_id' => $specialty->id,
+                    'qualification' => 'BS.CKI',
+                    'room_number' => 'P.' . (100 + ($user->id % 89)),
+                    'consultation_fee' => 300000,
+                    'bio' => 'Bác sĩ chuyên khoa giàu kinh nghiệm tại Bệnh viện Đa khoa Tâm Anh.',
+                    'is_available' => true,
+                ]);
+
+                foreach (['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'] as $dow) {
+                    foreach (['morning' => ['07:30:00', '11:30:00'], 'afternoon' => ['13:30:00', '17:00:00']] as $shift => $times) {
+                        \App\Models\DoctorSchedule::firstOrCreate(
+                            ['doctor_id' => $doctor->id, 'day_of_week' => $dow, 'shift' => $shift],
+                            ['start_time' => $times[0], 'end_time' => $times[1], 'max_patients' => 15, 'is_active' => true]
+                        );
+                    }
+                }
+            }
+        } elseif ($user->role === User::ROLE_PATIENT && !$user->patientProfile()->exists()) {
+            \App\Models\PatientProfile::create([
+                'user_id' => $user->id,
+                'patient_code' => \App\Models\PatientProfile::generatePatientCode(),
+                'full_name' => $user->name,
+                'phone' => $user->phone ?: '0900000000',
+                'dob' => '1990-01-01',
+                'gender' => 'other',
+                'email' => $user->email,
+            ]);
+        }
     }
 }

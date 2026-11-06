@@ -122,7 +122,7 @@
                         <div class="p-4 bg-light rounded-3 text-center mb-4">
                             <i class="bi bi-shield-check text-success display-4 mb-2"></i>
                             <h5 class="fw-bold text-success mb-1">Tài khoản của bạn đang được bảo vệ an toàn với 2FA</h5>
-                            <p class="text-muted small mb-0">Thời điểm xác nhận kích hoạt: {{ $user->two_factor_confirmed_at?->format('H:i d/m/Y') }}</p>
+                            <p class="text-muted small mb-0">Thời điểm xác nhận kích hoạt: {{ $user->two_factor_confirmed_at ? \Carbon\Carbon::parse($user->two_factor_confirmed_at)->format('H:i d/m/Y') : 'Đã kích hoạt' }}</p>
                         </div>
 
                         @if(!empty($recoveryCodes))

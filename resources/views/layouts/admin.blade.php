@@ -961,8 +961,8 @@
                 <span class="badge bg-white text-muted border font-monospace shadow-xs py-1" style="font-size: 0.65rem;">Ctrl K</span>
             </button>
 
-            <div class="d-flex align-items-center gap-2">
-                <a href="{{ route('booking.create') }}" class="btn btn-sm btn-primary d-none d-md-inline-flex align-items-center gap-1 rounded-pill">
+            <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                <a href="{{ route('booking.create') }}" class="btn btn-sm btn-primary d-none d-md-inline-flex align-items-center gap-1 rounded-pill px-3 text-nowrap flex-shrink-0">
                     <i class="bi bi-plus-circle"></i> Đặt lịch hẹn
                 </a>
 
@@ -980,6 +980,16 @@
                         <li class="px-3 py-2 border-bottom">
                             <div class="fw-bold">{{ Auth::user()->name ?? '' }}</div>
                             <div class="small text-muted">{{ Auth::user()->email ?? '' }}</div>
+                        </li>
+                        <li>
+                            <a class="dropdown-item py-2" href="{{ route('two-factor.setup') }}">
+                                <i class="bi bi-shield-lock me-2 text-primary"></i> Bảo mật 2 lớp (2FA)
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item py-2" href="{{ route('sessions.index') }}">
+                                <i class="bi bi-laptop me-2 text-info"></i> Quản lý phiên thiết bị
+                            </a>
                         </li>
                         <li>
                             <a class="dropdown-item py-2" href="{{ route('profile.password') }}">

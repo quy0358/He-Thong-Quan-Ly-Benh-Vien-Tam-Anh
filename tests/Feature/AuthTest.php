@@ -13,7 +13,12 @@ class AuthTest extends TestCase
     {
         parent::setUp();
         \Illuminate\Support\Facades\RateLimiter::clear('127.0.0.1');
-        User::where('email', 'patient@gmail.com')->update(['is_active' => true]);
+        User::whereIn('email', ['patient@gmail.com', 'admin@tamanh.vn'])->update([
+            'is_active' => true,
+            'password' => Hash::make('123456'),
+            'two_factor_secret' => null,
+            'two_factor_confirmed_at' => null,
+        ]);
     }
 
     public function test_login_screen_can_be_rendered(): void
