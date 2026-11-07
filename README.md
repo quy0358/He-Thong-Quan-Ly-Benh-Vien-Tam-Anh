@@ -263,22 +263,7 @@ Mật khẩu mặc định cho tất cả các tài khoản thử nghiệm: **`1
 
 ---
 
-## 10. BỘ 10 TÍNH NĂNG KIẾN TRÚC & AN NINH NÂNG CAO (TECHNICAL LEAD - NGUYỄN THÀNH QUÝ)
 
-Nhằm nâng cao chất lượng đồ án đạt cấp độ sản phẩm triển khai thực tế (Enterprise Grade), Technical Lead **Nguyễn Thành Quý** đã hoàn thành tích hợp trọn vẹn 10 phân hệ kiến trúc nền tảng và bảo mật nâng cao:
-
-| STT | Tính năng kiến trúc | Mô tả kỹ thuật & Thuật toán | Vị trí mã nguồn & Kiểm thử |
-| :---: | :--- | :--- | :--- |
-| **01** | **Xác thực 2 bước (2FA - TOTP)** | Thuật toán RFC 6238 HMAC-SHA1 trong PHP thuần, Base32 encoder/decoder, mã khôi phục khẩn cấp, tương thích Google/Microsoft Authenticator | `TotpService.php`, `TwoFactorController.php`, `two_factor_setup.blade.php` |
-| **02** | **Quản lý Phiên & Đăng xuất Từ xa** | Theo dõi thông tin phiên đăng nhập (IP, User Agent, Thời gian), cơ chế vô hiệu hóa phiên thiết bị khác từ xa qua mật khẩu | `DeviceSessionController.php`, `sessions.blade.php` |
-| **03** | **Nhật ký Kiểm toán & Phát hiện Brute-force** | Ghi nhận chi tiết mọi sự kiện an ninh, tự động phát hiện mẫu tấn công dò mật khẩu và kích hoạt `brute_force_alert`, xuất CSV UTF-8 BOM | `SecurityAuditService.php`, `SecurityAuditController.php`, `admin/security_audit/` |
-| **04** | **Hàng Đợi Chờ Thông Minh (Smart Waitlist)** | Thuật toán xếp hàng chờ tự động FIFO khi ca khám đạt `max_patients`. Tự động đôn chỗ (Auto-Promotion) và gửi email kích hoạt khi có ca hủy | `WaitlistEngineService.php`, `WaitlistPromotedMail.php`, `BookingController.php` |
-| **05** | **Đồng bộ Lịch khám (Calendar Sync)** | Tạo liên kết thêm vào Google Calendar và tạo tệp lịch chuẩn quốc tế iCalendar RFC 5545 (`.ics`) cho Apple Calendar, Outlook | `CalendarSyncService.php`, `CalendarExportController.php`, `booking-success.blade.php` |
-| **06** | **Hồ sơ Người thân & Đặt lịch Gia đình** | Quản lý người phụ thuộc (con cái, cha mẹ, vợ chồng), tự động điền thông tin nhanh khi đặt lịch tại phòng khám | `FamilyMember.php`, `FamilyMemberController.php`, `patient/family/` |
-| **07** | **Đổi Lịch Khám Tự Phục Vụ (Reschedule Engine)** | Cho phép bệnh nhân tự đổi ngày/ca khám trực tuyến, kiểm tra lịch trống và tự động kích hoạt đôn người cho slot cũ vừa giải phóng | `RescheduleAppointmentRequest.php`, `PatientPortalController.php`, `AppointmentRescheduledMail.php` |
-| **08** | **Chống Spam Bot Đa Tầng** | Cơ chế bẫy bot tàng hình (Invisible Honeypot) + Kiểm tra tốc độ nhập người dùng (Velocity Check > 1.5s) + Rate Limiter IP (15 req / 5 min) | `BookingSpamProtection.php`, `booking.blade.php` |
-| **09** | **Cấu Hình Tham Số Động & Chế Độ Bảo Trì** | Trung tâm quản lý cấu hình hệ thống bệnh viện thời gian thực qua Cache + Bật/tắt bảo trì cổng đặt lịch trả HTTP 503 thân thiện | `SystemSetting.php`, `CheckBookingMaintenance.php`, `SystemSettingController.php` |
-| **10** | **Giám Sát Sức Khỏe Toàn Diện (System Health)** | Bộ đo đạc vi mô thời gian thực: Độ trễ MySQL/MariaDB (ms), dung lượng ổ cứng, quyền ghi Storage, Cache read/write, Ping máy chủ Email, RAM usage | `SystemHealthCheckService.php`, `SystemHealthController.php`, `admin/system_health/` |
 
 
 
