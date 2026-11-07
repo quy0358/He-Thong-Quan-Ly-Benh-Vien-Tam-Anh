@@ -1,4 +1,4 @@
-# 🏥 HỆ THỐNG QUẢN LÝ BỆNH VIỆN ĐA KHOA TÂM ANH
+# HỆ THỐNG QUẢN LÝ BỆNH VIỆN ĐA KHOA TÂM ANH
 ### TAM ANH SMART HOSPITAL MANAGEMENT SYSTEM (HIS & EMR)
 
 <p align="center">
@@ -18,35 +18,36 @@
 
 ---
 
-## 📸 GIAO DIỆN HỆ THỐNG THỰC TẾ (SYSTEM SHOWCASE)
+## GIAO DIỆN HỆ THỐNG THỰC TẾ (SYSTEM SHOWCASE)
 
-| 🌐 Cổng Thông Tin Y Tế Công Khai & Đặt Lịch Khám | 📊 Trung Tâm Quản Trị Bệnh Viện & Y Khoa Toàn Diện |
+| Cổng Thông Tin Y Tế Công Khai & Đặt Lịch Khám | Trung Tâm Quản Trị Bệnh Viện & Y Khoa Toàn Diện |
 | :---: | :---: |
 | ![Trang chủ Cổng thông tin](docs/screenshots/01_cong_thong_tin_cong_khai/01_trang_chu.png) | ![Admin Dashboard](docs/screenshots/04_quan_tri_he_thong_va_y_khoa/01_admin_dashboard.png) |
 | *Giao diện Trang chủ hiện đại, tìm kiếm bác sĩ AJAX, AI gợi ý triệu chứng & Đặt lịch thông minh* | *Bảng điều khiển quản trị trung tâm, KPI thời gian thực, biểu đồ Chart.js & Quản trị y khoa toàn diện* |
 
 ---
 
-## 📑 MỤC LỤC ĐIỀU HƯỚNG NHANH
+## MỤC LỤC ĐIỀU HƯỚNG NHANH
 
-1. [Danh Sách Thành Viên & Phân Công Vai Trò](#-1-danh-sách-thành-viên-nhóm-và-phân-công-vai-trò)
-2. [Đóng Góp Qua Pull Requests (Contributors)](#-2-contributors-danh-sách-thành-viên-đóng-góp)
-3. [Công Nghệ & Nền Tảng Kỹ Thuật](#%EF%B8%8F-3-công-nghệ-và-môi-trường-phát-triển)
-4. [Sơ Đồ Cơ Sở Dữ Liệu (ERD)](#%EF%B8%8F-4-sơ-đồ-cơ-sở-dữ-liệu-erd)
-5. [Bảng Phân Công Nhiệm Vụ & Thành Quả 4 Thành Viên](#-5-bảng-phân-công-nhiệm-vụ-chi-tiết-từng-thành-viên)
-   - [Nguyễn Thành Quý - Technical Lead & System Core](#1-nguyễn-thành-quý-technical-lead--system-core-architect)
+1. [Danh Sách Thành Viên Nhóm & Phân Công Vai Trò](#1-danh-sách-thành-viên-nhóm-và-phân-công-vai-trò)
+2. [Contributors (Danh Sách Thành Viên Đóng Góp & Pull Requests)](#2-contributors-danh-sách-thành-viên-đóng-góp)
+3. [Công Nghệ & Môi Trường Phát Triển](#3-công-nghệ-và-môi-trường-phát-triển)
+4. [Sơ Đồ Cơ Sở Dữ Liệu (ERD)](#4-sơ-đồ-cơ-sở-dữ-liệu-erd)
+5. [Bảng Phân Công Nhiệm Vụ Chi Tiết Từng Thành Viên](#5-bảng-phân-công-nhiệm-vụ-chi-tiết-từng-thành-viên)
+   - [Nguyễn Thành Quý - Technical Lead & System Core Architect](#1-nguyễn-thành-quý-technical-lead--system-core-architect)
    - [Nguyễn Văn Đạt - Master Data, Public Portal & Medical Governance](#2-nguyễn-văn-đạt-master-data-public-portal--medical-governance)
    - [Nguyễn Văn Hưng - Patient Reception, Inpatient & Clinical Safety](#3-nguyễn-văn-hưng-patient-reception-inpatient--clinical-safety)
    - [Võ Lê Gia Bảo - Consultation, Records & Analytics](#4-võ-lê-gia-bảo-consultation-records--analytics)
-6. [Bộ 10 Phân Hệ Kiến Trúc & An Ninh Đột Phá](#%EF%B8%8F-6-bộ-10-tính-năng-kiến-trúc--an-ninh-nâng-cao-technical-lead)
-7. [Quy Trình Phối Hợp Git Của Nhóm](#-7-quy-trình-phối-hợp-git-của-nhóm-git-workflow)
-8. [Hướng Dẫn Cài Đặt & Triển Khai (Windows/XAMPP)](#-8-hướng-dẫn-cài-đặt-dự-án-trên-máy-windows-xampp)
-9. [Tài Khoản Mẫu Trình Diễn & Demo](#-9-tài-khoản-mẫu-dùng-để-kiểm-thử-và-trình-diễn-seed-data)
-10. [Báo Cáo Kiểm Thử Tự Động Toàn Hệ Thống](#-10-báo-cáo-kiểm-thử-tự-động-toàn-viện-automated-testing-report)
+6. [Bộ 10 Phân Hệ Kiến Trúc & An Ninh Đột Phá (Technical Lead)](#6-bộ-10-tính-năng-kiến-trúc--an-ninh-nâng-cao-technical-lead)
+7. [Quy Trình Phối Hợp Git Của Nhóm (Git Workflow)](#7-quy-trình-phối-hợp-git-của-nhóm-git-workflow)
+8. [Hướng Dẫn Cài Đặt Dự Án Trên Máy Windows (XAMPP)](#8-hướng-dẫn-cài-đặt-dự-án-trên-máy-windows-xampp)
+9. [Tài Khoản Mẫu Dùng Để Kiểm Thử & Trình Diễn (Seed Data)](#9-tài-khoản-mẫu-dùng-để-kiểm-thử-và-trình-diễn-seed-data)
+10. [Báo Cáo Kiểm Thử Tự Động Toàn Viện (Automated Testing Report)](#10-báo-cáo-kiểm-thử-tự-động-toàn-viện-automated-testing-report)
+11. [Tiến Độ Thực Hiện 4 Tuần](#11-tiến-độ-thực-hiện-4-tuần)
 
 ---
 
-## 👥 1. DANH SÁCH THÀNH VIÊN NHÓM VÀ PHÂN CÔNG VAI TRÒ
+## 1. DANH SÁCH THÀNH VIÊN NHÓM VÀ PHÂN CÔNG VAI TRÒ
 
 | STT | Họ và tên | Mã số SV | Vai trò chính | Trách nhiệm trọng tâm |
 | :---: | :--- | :---: | :--- | :--- |
@@ -57,7 +58,7 @@
 
 ---
 
-## 🤝 2. CONTRIBUTORS (DANH SÁCH THÀNH VIÊN ĐÓNG GÓP)
+## 2. CONTRIBUTORS (DANH SÁCH THÀNH VIÊN ĐÓNG GÓP)
 
 Toàn bộ các phân hệ chức năng được phát triển độc lập theo nhánh tính năng và tích hợp liên tục vào mã nguồn chính thông qua **13 Pull Requests** chuẩn mực:
 
@@ -73,7 +74,7 @@ Toàn bộ các phân hệ chức năng được phát triển độc lập theo
 
 ---
 
-## 🛠️ 3. CÔNG NGHỆ VÀ MÔI TRƯỜNG PHÁT TRIỂN
+## 3. CÔNG NGHỆ VÀ MÔI TRƯỜNG PHÁT TRIỂN
 
 - **Ngôn ngữ lập trình & Phiên bản:** PHP 8.2+ (chạy qua XAMPP hoặc PHP CLI standalone).
 - **Framework phía máy chủ (Backend):** Laravel 11.x (cấu trúc thư mục tối ưu, Service Layer, Policy Authorization, Database Transactions, Mailables, Eloquent ORM).
@@ -94,7 +95,7 @@ Toàn bộ các phân hệ chức năng được phát triển độc lập theo
 
 ---
 
-## 🏛️ 4. SƠ ĐỒ CƠ SỞ DỮ LIỆU (ERD)
+## 4. SƠ ĐỒ CƠ SỞ DỮ LIỆU (ERD)
 
 ```mermaid
 erDiagram
@@ -136,7 +137,7 @@ erDiagram
 
 ---
 
-## 📋 5. BẢNG PHÂN CÔNG NHIỆM VỤ CHI TIẾT TỪNG THÀNH VIÊN
+## 5. BẢNG PHÂN CÔNG NHIỆM VỤ CHI TIẾT TỪNG THÀNH VIÊN
 
 ---
 
@@ -245,7 +246,7 @@ erDiagram
 
 ---
 
-## 🛡️ 6. BỘ 10 TÍNH NĂNG KIẾN TRÚC & AN NINH NÂNG CAO (TECHNICAL LEAD)
+## 6. BỘ 10 TÍNH NĂNG KIẾN TRÚC & AN NINH NÂNG CAO (TECHNICAL LEAD)
 
 Nhằm nâng cao chất lượng đồ án đạt cấp độ sản phẩm triển khai thực tế (Enterprise Grade), Technical Lead **Nguyễn Thành Quý** đã hoàn thành tích hợp trọn vẹn 10 phân hệ kiến trúc nền tảng và bảo mật nâng cao:
 
@@ -264,7 +265,7 @@ Nhằm nâng cao chất lượng đồ án đạt cấp độ sản phẩm tri�
 
 ---
 
-## 🌿 7. QUY TRÌNH PHỐI HỢP GIT CỦA NHÓM (GIT WORKFLOW)
+## 7. QUY TRÌNH PHỐI HỢP GIT CỦA NHÓM (GIT WORKFLOW)
 
 ### Mô hình phân nhánh (Git Flow):
 - `main`: Nhánh sản phẩm chính thức, ổn định tuyệt đối, sẵn sàng triển khai và demo trước hội đồng giảng viên.
@@ -307,7 +308,7 @@ git push origin feature/ten-tinh-nang
 
 ---
 
-## 🚀 8. HƯỚNG DẪN CÀI ĐẶT DỰ ÁN TRÊN MÁY WINDOWS (XAMPP)
+## 8. HƯỚNG DẪN CÀI ĐẶT DỰ ÁN TRÊN MÁY WINDOWS (XAMPP)
 
 ### Yêu cầu tiên quyết:
 - **Hệ điều hành:** Windows 10/11 (hoặc Linux/macOS).
@@ -361,7 +362,7 @@ Truy cập hệ thống ngay trên trình duyệt tại địa chỉ: **`http://
 
 ---
 
-## 🔑 9. TÀI KHOẢN MẪU DÙNG ĐỂ KIỂM THỬ VÀ TRÌNH DIỄN (SEED DATA)
+## 9. TÀI KHOẢN MẪU DÙNG ĐỂ KIỂM THỬ VÀ TRÌNH DIỄN (SEED DATA)
 
 Mật khẩu mặc định cho toàn bộ các tài khoản thử nghiệm trong hệ thống: **`123456`**
 
@@ -374,7 +375,7 @@ Mật khẩu mặc định cho toàn bộ các tài khoản thử nghiệm trong
 
 ---
 
-## 🧪 10. BÁO CÁO KIỂM THỬ TỰ ĐỘNG TOÀN VIỆN (AUTOMATED TESTING REPORT)
+## 10. BÁO CÁO KIỂM THỬ TỰ ĐỘNG TOÀN VIỆN (AUTOMATED TESTING REPORT)
 
 Hệ thống được trang bị bộ kiểm thử tự động chuẩn Enterprise bao phủ toàn bộ các kịch bản tích cực, trường hợp biên, các trường hợp validation và phân quyền:
 
@@ -394,7 +395,7 @@ php artisan test
 
 ---
 
-## 📅 11. TIẾN ĐỘ THỰC HIỆN 4 TUẦN CỦA DỰ ÁN
+## 11. TIẾN ĐỘ THỰC HIỆN 4 TUẦN CỦA DỰ ÁN
 
 - **Tuần 1 (Sprint 1 - Foundation & Core Architecture):**
   - Thống nhất kiến trúc MVC, phân quyền 4 vai trò RBAC, khởi tạo khung dự án Laravel 11.
