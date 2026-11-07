@@ -280,8 +280,5 @@ Nhằm nâng cao chất lượng đồ án đạt cấp độ sản phẩm tri�
 | **09** | **Cấu Hình Tham Số Động & Chế Độ Bảo Trì** | Trung tâm quản lý cấu hình hệ thống bệnh viện thời gian thực qua Cache + Bật/tắt bảo trì cổng đặt lịch trả HTTP 503 thân thiện | `SystemSetting.php`, `CheckBookingMaintenance.php`, `SystemSettingController.php` |
 | **10** | **Giám Sát Sức Khỏe Toàn Diện (System Health)** | Bộ đo đạc vi mô thời gian thực: Độ trễ MySQL/MariaDB (ms), dung lượng ổ cứng, quyền ghi Storage, Cache read/write, Ping máy chủ Email, RAM usage | `SystemHealthCheckService.php`, `SystemHealthController.php`, `admin/system_health/` |
 
-- **Kết quả kiểm thử tự động toàn diện:** `tests/Feature/TechLeadInnovationSuiteTest.php` với **11/11 tests PASSED 100% Green (68 assertions)**.
-- **Tổng kiểm thử toàn dự án sau tích hợp PR #12:** **566 tests PASSED 100% Green (3.171 assertions)**.
 
----
-*Dự án phục vụ mục đích học tập và nghiên cứu môn học Phát triển ứng dụng Web.*
+
