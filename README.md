@@ -1,16 +1,6 @@
 # HỆ THỐNG QUẢN LÝ BỆNH VIỆN ĐA KHOA TÂM ANH
 ### TAM ANH SMART HOSPITAL MANAGEMENT SYSTEM (HIS & EMR)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel 11" />
-  <img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.2+" />
-  <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL 8.0" />
-  <img src="https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap 5.3" />
-  <img src="https://img.shields.io/badge/PHPUnit-566%2F566%20Passed%20(100%25%20Green)-success?style=for-the-badge&logo=checkmarx&logoColor=white" alt="Tests" />
-  <img src="https://img.shields.io/badge/Assertions-3%2C171%20Passed-brightgreen?style=for-the-badge" alt="Assertions" />
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
-</p>
-
 > **Đồ án môn học:** Phát triển ứng dụng Web (PHP - Laravel - MySQL)  
 > **Kho lưu trữ mã nguồn chính thức (Repository):** [https://github.com/quy0358/He-Thong-Quan-Ly-Benh-Vien-Tam-Anh](https://github.com/quy0358/He-Thong-Quan-Ly-Benh-Vien-Tam-Anh)  
 > **Tài liệu Kế hoạch Triển khai & Kiến trúc Chi tiết:** [`ke_hoach_trien_khai_benh_vien_tam_anh.md`](./ke_hoach_trien_khai_benh_vien_tam_anh.md)  
@@ -68,9 +58,6 @@ Toàn bộ các phân hệ chức năng được phát triển độc lập theo
 | **Nguyễn Văn Đạt** | [@jtadd123](https://github.com/jtadd123) | **Master Data, Public Portal & Medical Governance**: Quản trị Chuyên khoa & Bác sĩ, Lịch trực tuần, AI Symptom Matcher, vCard QR, Wayfinding, Song ngữ EN/VI, Reviews, KPI, Workload Balancer, CCHN, Cùng **Hệ sinh thái Quản trị Y khoa Toàn diện** (970 phẫu thuật TT50, 730 phác đồ CPG, 840 ca CME, 500 NCKH & Fatigue Balancer). | [![PRs Merged](https://img.shields.io/badge/PR%20%231%2C%20%237%2C%20%239%2C%20%2311%2C%20%2312%20%26%20%2313-Merged-success)]() | [![PHPUnit](https://img.shields.io/badge/MedicalGovernance-174%2F174%20Green-brightgreen)]() |
 | **Nguyễn Văn Hưng** | [@hung090725](https://github.com/hung090725) | **Patient Reception, Inpatient & Clinical Safety**: Quản lý hồ sơ người bệnh, tiếp đón sảnh, Kiosk tự phục vụ, viện phí VietQR, an toàn dược & lâm sàng, Spotlight Search toàn viện (`Ctrl + K`) và 27+ phân hệ chuyên sâu theo tiêu chuẩn Bộ Y tế & JCI Quốc tế. | [![PRs Merged](https://img.shields.io/badge/PR%20%234%2C%20%236%20%26%20%2310-Merged-success)]() | [![PHPUnit](https://img.shields.io/badge/ClinicalSafety-371%2F371%20Green-brightgreen)]() |
 | **Võ Lê Gia Bảo** | [@gbao289](https://github.com/gbao289) | **Consultation, Records & Analytics**: Bàn khám bác sĩ, Hàng đợi ca khám, Bệnh án điện tử EMR, Đơn thuốc lặp trong Database Transaction, File y tế bảo mật qua Policy, Dashboard thống kê, Xuất báo cáo Excel/PDF (`XlsxReportWriter`) & Cổng thông tin Bệnh nhân. | [![PRs Merged](https://img.shields.io/badge/PR%20%235%20%26%20%238-Merged-success)]() | [![PHPUnit](https://img.shields.io/badge/Consultation-10%2F10%20Green-brightgreen)]() |
-
-> [!NOTE]
-> **Tổng quy mô kiểm thử tự động toàn dự án:** **566/566 Tests PASSED 100% Green (3.171 Assertions)**, đảm bảo toàn vẹn dữ liệu, chống tấn công truy cập trái phép và bảo vệ tuyệt đối các luồng nghiệp vụ y khoa.
 
 ---
 
@@ -246,26 +233,7 @@ erDiagram
 
 ---
 
-## 6. BỘ 10 TÍNH NĂNG KIẾN TRÚC & AN NINH NÂNG CAO (TECHNICAL LEAD)
-
-Nhằm nâng cao chất lượng đồ án đạt cấp độ sản phẩm triển khai thực tế (Enterprise Grade), Technical Lead **Nguyễn Thành Quý** đã hoàn thành tích hợp trọn vẹn 10 phân hệ kiến trúc nền tảng và bảo mật nâng cao:
-
-| STT | Tính năng kiến trúc | Mô tả kỹ thuật & Thuật toán | Vị trí mã nguồn & Kiểm thử |
-| :---: | :--- | :--- | :--- |
-| **01** | **Xác thực 2 bước (2FA - TOTP)** | Thuật toán RFC 6238 HMAC-SHA1 trong PHP thuần, Base32 encoder/decoder, mã khôi phục khẩn cấp, tương thích Google/Microsoft Authenticator | `TotpService.php`, `TwoFactorController.php`, `two_factor_setup.blade.php` |
-| **02** | **Quản lý Phiên & Đăng xuất Từ xa** | Theo dõi thông tin phiên đăng nhập (IP, User Agent, Thời gian), cơ chế vô hiệu hóa phiên thiết bị khác từ xa qua xác thực mật khẩu | `DeviceSessionController.php`, `sessions.blade.php` |
-| **03** | **Nhật ký Kiểm toán & Phát hiện Brute-force** | Ghi nhận chi tiết mọi sự kiện an ninh, tự động phát hiện mẫu tấn công dò mật khẩu và kích hoạt `brute_force_alert`, xuất CSV UTF-8 BOM | `SecurityAuditService.php`, `SecurityAuditController.php`, `admin/security_audit/` |
-| **04** | **Hàng Đợi Chờ Thông Minh (Smart Waitlist)** | Thuật toán xếp hàng chờ tự động FIFO khi ca khám đạt `max_patients`. Tự động đôn chỗ (Auto-Promotion) và gửi email kích hoạt khi có ca hủy | `WaitlistEngineService.php`, `WaitlistPromotedMail.php`, `BookingController.php` |
-| **05** | **Đồng bộ Lịch khám (Calendar Sync)** | Tạo liên kết thêm vào Google Calendar và tạo tệp lịch chuẩn quốc tế iCalendar RFC 5545 (`.ics`) cho Apple Calendar, Outlook | `CalendarSyncService.php`, `CalendarExportController.php`, `booking-success.blade.php` |
-| **06** | **Hồ sơ Người thân & Đặt lịch Gia đình** | Quản lý người phụ thuộc (con cái, cha mẹ, vợ chồng), tự động điền thông tin nhanh khi đặt lịch tại phòng khám | `FamilyMember.php`, `FamilyMemberController.php`, `patient/family/` |
-| **07** | **Đổi Lịch Khám Tự Phục Vụ (Reschedule Engine)** | Cho phép bệnh nhân tự đổi ngày/ca khám trực tuyến, kiểm tra lịch trống và tự động kích hoạt đôn người cho slot cũ vừa giải phóng | `RescheduleAppointmentRequest.php`, `PatientPortalController.php`, `AppointmentRescheduledMail.php` |
-| **08** | **Chống Spam Bot Đa Tầng** | Cơ chế bẫy bot tàng hình (Invisible Honeypot) + Kiểm tra tốc độ nhập người dùng (Velocity Check > 1.5s) + Rate Limiter IP (15 req / 5 min) | `BookingSpamProtection.php`, `booking.blade.php` |
-| **09** | **Cấu Hình Tham Số Động & Chế Độ Bảo Trì** | Trung tâm quản lý cấu hình hệ thống bệnh viện thời gian thực qua Cache + Bật/tắt bảo trì cổng đặt lịch trả HTTP 503 thân thiện | `SystemSetting.php`, `CheckBookingMaintenance.php`, `SystemSettingController.php` |
-| **10** | **Giám Sát Sức Khỏe Toàn Diện (System Health)** | Bộ đo đạc vi mô thời gian thực: Độ trễ MySQL/MariaDB (ms), dung lượng ổ cứng, quyền ghi Storage, Cache read/write, Ping máy chủ Email, RAM usage | `SystemHealthCheckService.php`, `SystemHealthController.php`, `admin/system_health/` |
-
----
-
-## 7. QUY TRÌNH PHỐI HỢP GIT CỦA NHÓM (GIT WORKFLOW)
+## 6. QUY TRÌNH PHỐI HỢP GIT CỦA NHÓM (GIT WORKFLOW)
 
 ### Mô hình phân nhánh (Git Flow):
 - `main`: Nhánh sản phẩm chính thức, ổn định tuyệt đối, sẵn sàng triển khai và demo trước hội đồng giảng viên.
@@ -300,7 +268,6 @@ git merge develop
 git push origin feature/ten-tinh-nang
 ```
 
-> [!IMPORTANT]
 > **Quy Tắc Quản Trị Mã Nguồn:**
 > - Tuyệt đối không commit thẳng vào `main` hoặc `develop`.
 > - Mọi Pull Request đều phải đính kèm mô tả chi tiết, kiểm thử tự động đạt 100% Green và do Technical Lead (@quy0358) kiểm duyệt trước khi gộp mã.
@@ -308,7 +275,7 @@ git push origin feature/ten-tinh-nang
 
 ---
 
-## 8. HƯỚNG DẪN CÀI ĐẶT DỰ ÁN TRÊN MÁY WINDOWS (XAMPP)
+## 7. HƯỚNG DẪN CÀI ĐẶT DỰ ÁN TRÊN MÁY WINDOWS (XAMPP)
 
 ### Yêu cầu tiên quyết:
 - **Hệ điều hành:** Windows 10/11 (hoặc Linux/macOS).
@@ -362,40 +329,20 @@ Truy cập hệ thống ngay trên trình duyệt tại địa chỉ: **`http://
 
 ---
 
-## 9. TÀI KHOẢN MẪU DÙNG ĐỂ KIỂM THỬ VÀ TRÌNH DIỄN (SEED DATA)
+## 8. TÀI KHOẢN MẪU DÙNG ĐỂ KIỂM THỬ VÀ TRÌNH DIỄN (SEED DATA)
 
 Mật khẩu mặc định cho toàn bộ các tài khoản thử nghiệm trong hệ thống: **`123456`**
 
 | Vai trò | Email đăng nhập | Quyền hạn chính trong hệ thống |
 | :--- | :--- | :--- |
-| 👑 **Quản trị viên (Admin)** | `admin@tamanh.vn` | Toàn quyền quản trị tài khoản, chuyên khoa, danh bạ bác sĩ, phân ca trực, trung tâm quản trị y khoa, kiểm toán an ninh, xem dashboard thống kê & giám sát sức khỏe hạ tầng. |
-| 👩‍💼 **Nhân viên Lễ tân (Receptionist)** | `receptionist@tamanh.vn` | Tiếp đón bệnh nhân, check-in ca hẹn, tiếp nhận vãng lai, quản lý hồ sơ bệnh nhân, xuất hóa đơn viện phí VietQR, quầy dược ngoại trú, phân luồng cấp cứu Code Red. |
-| 👨‍⚕️ **Bác sĩ Chuyên khoa (Doctor)** | `doctor@tamanh.vn` *(hoặc `dat.nv@tamanh.vn`)* | Xem hàng đợi khám trong ca, lập hồ sơ bệnh án điện tử EMR, chẩn đoán, kê đơn thuốc lặp, đính kèm kết quả xét nghiệm/X-quang có phân quyền bảo mật. |
-| 👤 **Bệnh nhân (Patient)** | `patient@gmail.com` | Tra cứu danh bạ bác sĩ, đặt lịch khám trực tuyến, quản lý hồ sơ người thân trong gia đình, xem lịch sử khám và tự đổi lịch khám trực tuyến. |
+|  **Quản trị viên (Admin)** | `admin@tamanh.vn` | Toàn quyền quản trị tài khoản, chuyên khoa, danh bạ bác sĩ, phân ca trực, trung tâm quản trị y khoa, kiểm toán an ninh, xem dashboard thống kê & giám sát sức khỏe hạ tầng. |
+|  **Nhân viên Lễ tân (Receptionist)** | `receptionist@tamanh.vn` | Tiếp đón bệnh nhân, check-in ca hẹn, tiếp nhận vãng lai, quản lý hồ sơ bệnh nhân, xuất hóa đơn viện phí VietQR, quầy dược ngoại trú, phân luồng cấp cứu Code Red. |
+|  **Bác sĩ Chuyên khoa (Doctor)** | `doctor@tamanh.vn` *(hoặc `dat.nv@tamanh.vn`)* | Xem hàng đợi khám trong ca, lập hồ sơ bệnh án điện tử EMR, chẩn đoán, kê đơn thuốc lặp, đính kèm kết quả xét nghiệm/X-quang có phân quyền bảo mật. |
+|  **Bệnh nhân (Patient)** | `patient@gmail.com` | Tra cứu danh bạ bác sĩ, đặt lịch khám trực tuyến, quản lý hồ sơ người thân trong gia đình, xem lịch sử khám và tự đổi lịch khám trực tuyến. |
 
 ---
 
-## 10. BÁO CÁO KIỂM THỬ TỰ ĐỘNG TOÀN VIỆN (AUTOMATED TESTING REPORT)
-
-Hệ thống được trang bị bộ kiểm thử tự động chuẩn Enterprise bao phủ toàn bộ các kịch bản tích cực, trường hợp biên, các trường hợp validation và phân quyền:
-
-```bash
-php artisan test
-```
-
-### Bảng Tổng Hợp Kết Quả Kiểm Thử Toàn Diện:
-
-| Phân hệ kiểm thử | Bộ Test Suite đại diện | Số lượng Tests | Trạng thái |
-| :--- | :--- | :---: | :---: |
-| **System Core & Security Innovations** | `TechLeadInnovationSuiteTest`, `AuthTest`, `BookingTest` | **31 Tests** | 🟢 **100% PASSED** |
-| **Master Data & Medical Governance** | `DoctorSpecialtyTest`, `MedicalGovernance*Test` (5 suites) | **174 Tests** | 🟢 **100% PASSED** |
-| **Reception, Pharmacy & Clinical Safety**| `ReceptionPatientTest`, `BloodTransfusionSafetyTest`, `CodeRedEmergencyTest`, `SmartBillingVietQrTest`, `UniversalHospitalSearchTest`, `Wave*Test` | **351 Tests** | 🟢 **100% PASSED** |
-| **Consultation, Records & Reports** | `DoctorConsultationTest`, `MedicalAttachmentTest`, `AdminReportExportTest`, `XlsxReportWriterTest` | **10 Tests** | 🟢 **100% PASSED** |
-| **Tổng kết toàn hệ thống** | **58 Test Files (Unit & Feature Tests)** | **566 Tests** | 🟢 **100% PASSED (3.171 Assertions)** |
-
----
-
-## 11. TIẾN ĐỘ THỰC HIỆN 4 TUẦN CỦA DỰ ÁN
+## 9. TIẾN ĐỘ THỰC HIỆN 4 TUẦN CỦA DỰ ÁN
 
 - **Tuần 1 (Sprint 1 - Foundation & Core Architecture):**
   - Thống nhất kiến trúc MVC, phân quyền 4 vai trò RBAC, khởi tạo khung dự án Laravel 11.
@@ -419,5 +366,4 @@ php artisan test
 
 <p align="center">
   <b>HỆ THỐNG QUẢN LÝ BỆNH VIỆN ĐA KHOA TÂM ANH</b><br>
-  <i>Phát triển bởi Nhóm sinh viên môn Phát triển ứng dụng Web - Đạt chuẩn sản phẩm Y tế thông minh cấp độ Enterprise.</i>
 </p>
